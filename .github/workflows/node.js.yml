@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest      
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - name: npm install and build webpack
@@ -22,9 +22,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x, 14.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
         os: [ubuntu-latest, windows-2016]
+        node-version: [12.x, 14.x]
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
@@ -32,7 +31,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: npm install, and test
-    - run: |
+      run: |
         npm install
         npm test
       env:
