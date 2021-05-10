@@ -1,2 +1,5 @@
 name: Team Discovery Channel's approval workflow
 on: pull_request_review
+jobs:
+  labelWhenApproved:
+    runs-on: ubuntue-latest
